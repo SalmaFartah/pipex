@@ -6,7 +6,7 @@
 /*   By: sfartah <sfartah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 12:40:00 by sfartah           #+#    #+#             */
-/*   Updated: 2025/03/25 15:02:20 by sfartah          ###   ########.fr       */
+/*   Updated: 2025/03/25 15:53:44 by sfartah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <fcntl.h>
 # include <unistd.h>
 # include <stdio.h>
-# include <string.h>
 # include <stdlib.h>
+# include <sys/wait.h>
 
 typedef struct s_h
 {

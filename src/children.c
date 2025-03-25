@@ -6,7 +6,7 @@
 /*   By: sfartah <sfartah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 15:20:30 by sfartah           #+#    #+#             */
-/*   Updated: 2025/03/25 15:08:40 by sfartah          ###   ########.fr       */
+/*   Updated: 2025/03/25 15:55:36 by sfartah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ void	child(t_h data, char *av[], char *env[])
 
 void	sec_child(t_h data, char *av[], char *env[])
 {
-	
 	data.out = checkoutfile(av[4], data.pfs);
 	data.paths = get_path(env);
 	if (!data.paths)
