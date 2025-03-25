@@ -6,7 +6,7 @@
 /*   By: sfartah <sfartah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 15:21:36 by sfartah           #+#    #+#             */
-/*   Updated: 2025/03/25 16:21:13 by sfartah          ###   ########.fr       */
+/*   Updated: 2025/03/25 16:58:50 by sfartah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	checkinfile(char *file, int fds[2])
 		ft_putstr_fd("pipex: permission denied: ", 2);
 		ft_putstr_fd(file, 2);
 		write(2, "\n", 1);
-		close_exit(fds, -1, 0);
+		close_exit(fds, fd, 0);
 	}
 	if (fd < 0)
 	{
@@ -49,7 +49,7 @@ int	checkoutfile(char *file, int fds[2])
 		ft_putstr_fd("pipex: permission denied: ", 2);
 		ft_putstr_fd(file, 2);
 		write(2, "\n", 1);
-		close_exit(fds, -1, 1);
+		close_exit(fds, fd, 1);
 	}
 	if (fd < 0)
 	{
