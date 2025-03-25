@@ -6,7 +6,7 @@
 /*   By: sfartah <sfartah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 15:21:36 by sfartah           #+#    #+#             */
-/*   Updated: 2025/03/25 14:55:43 by sfartah          ###   ########.fr       */
+/*   Updated: 2025/03/25 15:25:54 by sfartah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,19 +49,17 @@ int	checkoutfile(char *file, int fds[2])
 	int	fd;
 
 	fd = open(file, O_CREAT | O_WRONLY | O_TRUNC, 0644);
-	if (access(file, F_OK) < 0)
-	{
-		ft_putstr_fd("pipex: no such file or directory: ", 2);
-		ft_putstr_fd(file, 2);
-		write(2, "\n", 1);
-		close_exit(fds, -1, 1);
-	}
 	if (access(file, W_OK) < 0)
 	{
 		ft_putstr_fd("pipex: permission denied: ", 2);
 		ft_putstr_fd(file, 2);
 		write(2, "\n", 1);
 		close_exit(fds, -1, 1);
+	}
+	if (fd < 0)
+	{
+		perror("pipex: ");
+		close_exit(fds, -1, 0);
 	}
 	return (fd);
 }
