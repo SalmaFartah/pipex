@@ -3,21 +3,22 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 NAME = pipex
-# HEADERS = -I ./include -I ./display
 
 SRC = 	src/pipex.c\
-		disp_array.c\
+		src/sp_cmd.c\
 		src/free_ar.c\
-		display/ft_printf.c\
-		display/pf_utils.c\
-		display/pf_utils1.c\
+		src/checklist.c\
+		src/children.c\
+		src/ft_error.c\
 		libftneed/ft_split.c\
 		libftneed/ft_strdup.c\
 		libftneed/ft_strjoin.c\
 		libftneed/ft_bzero.c\
 		libftneed/ft_calloc.c\
 		libftneed/ft_strlen.c\
-		libftneed/ft_strnstr.c
+		libftneed/ft_strnstr.c\
+		libftneed/ft_substr.c\
+		libftneed/ft_putstr_fd.c
 
 DEF_COLOR = \033[0;39m
 GRAY = \033[0;90m

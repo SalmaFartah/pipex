@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfartah <sfartah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/24 12:33:00 by sfartah           #+#    #+#             */
-/*   Updated: 2024/12/01 22:37:22 by sfartah          ###   ########.fr       */
+/*   Created: 2025/03/24 15:23:06 by sfartah           #+#    #+#             */
+/*   Updated: 2025/03/24 23:16:13 by sfartah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../include/pipex.h"
 
-# include <stdarg.h>
-# include <unistd.h>
+void	closet(int fa, int fb, int fc)
+{
+	if (fa >= 0)
+		close(fa);
+	if (fb >= 0)
+		close(fb);
+	if (fc >= 0)
+		close(fc);
+}
 
-int	ft_printf(const char *format, ...);
-int	putch(char c);
-int	putst(char *str);
-int	putnb(int nb);
-int	putunb(unsigned int nb);
-int	putadrs(void *p, char c);
-int	puthex(unsigned long nb, char c);
-
-#endif
+void	ft_error(char *str, int fa, int fb)
+{
+	ft_putstr_fd(str, 2);
+	close(fa);
+	close(fb);
+}

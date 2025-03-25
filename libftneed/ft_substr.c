@@ -1,20 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   disp_array.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sfartah <sfartah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/19 13:49:32 by sfartah           #+#    #+#             */
-/*   Updated: 2025/03/19 13:49:52 by sfartah          ###   ########.fr       */
+/*   Created: 2024/10/26 15:21:03 by sfartah           #+#    #+#             */
+/*   Updated: 2025/03/22 15:10:04 by sfartah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/pipex.h"
+#include "../include/pipex.h"
 
-void disp_ar(char **map)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	i = 0;
-	while (map[i])
-		printf("%s\n", map[i++]);
+	char		*ptr;
+	size_t		i;
+
+	if (!s)
+		return (NULL);
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
+	ptr = malloc(len + 1);
+	if (!ptr)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		ptr[i] = s[start + i];
+		i++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
 }

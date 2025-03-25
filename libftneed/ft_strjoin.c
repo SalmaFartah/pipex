@@ -6,7 +6,7 @@
 /*   By: sfartah <sfartah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 13:20:12 by sfartah           #+#    #+#             */
-/*   Updated: 2025/03/19 17:10:08 by sfartah          ###   ########.fr       */
+/*   Updated: 2025/03/23 21:12:27 by sfartah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(char *s1, char *s2)
 		return (ft_strdup(s1));
 	if (!s1 && !s2)
 		return (NULL);
-	ptr = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
+	ptr = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 2, sizeof(char));
 	if (!ptr)
 		return (NULL);
 	u = 0;
@@ -33,8 +33,9 @@ char	*ft_strjoin(char *s1, char *s2)
 		ptr[u] = s1[u];
 		u++;
 	}
+	ptr[u++] = '/';
 	v = 0;
 	while (s2[v])
 		ptr[u++] = s2[v++];
-	return (free(s1), ptr);
+	return (ptr);
 }
