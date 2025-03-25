@@ -6,7 +6,7 @@
 /*   By: sfartah <sfartah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 15:23:06 by sfartah           #+#    #+#             */
-/*   Updated: 2025/03/24 23:16:13 by sfartah          ###   ########.fr       */
+/*   Updated: 2025/03/25 15:01:35 by sfartah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ void	closet(int fa, int fb, int fc)
 void	ft_error(char *str, int fa, int fb)
 {
 	ft_putstr_fd(str, 2);
-	close(fa);
-	close(fb);
+	closet(fa, fb, -1);
 }

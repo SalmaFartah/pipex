@@ -6,7 +6,7 @@
 /*   By: sfartah <sfartah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 12:40:00 by sfartah           #+#    #+#             */
-/*   Updated: 2025/03/25 01:21:00 by sfartah          ###   ########.fr       */
+/*   Updated: 2025/03/25 15:02:20 by sfartah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ void	sec_child(t_h data, char *av[], char *env[]);
 
 void	closet(int fa, int fb, int fc);
 void	ft_error(char *str, int fa, int fb);
+void	close_exit(int fds[2], int fd, int err);
 
 #endif
