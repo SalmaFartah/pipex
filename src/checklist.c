@@ -6,17 +6,11 @@
 /*   By: sfartah <sfartah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 15:21:36 by sfartah           #+#    #+#             */
-/*   Updated: 2025/03/25 15:55:23 by sfartah          ###   ########.fr       */
+/*   Updated: 2025/03/25 16:21:13 by sfartah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pipex.h"
-
-void	close_exit(int fds[2], int fd, int err)
-{
-	closet(fds[0], fds[1], fd);
-	exit(err);
-}
 
 int	checkinfile(char *file, int fds[2])
 {
